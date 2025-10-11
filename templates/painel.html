@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel do Usuário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        .btn-blue {
+            background-color: #007bff;
+        }
+        .btn-blue:hover {
+            background-color: #0056b3;
+        }
+        .btn-red {
+            background-color: #dc3545;
+        }
+        .btn-red:hover {
+            background-color: #a71d2a;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo(a), {{ session['usuario_nome'] }}!</h1>
+    <p>Escolha uma opção abaixo:</p>
+
+    <!-- Botão para ir direto para a página de avaliações -->
+    <a href="/avaliar" class="btn">Fazer uma Avaliação</a>
+
+    <!-- Botão para ver todas as avaliações -->
+    <a href="/avaliacoes" class="btn btn-blue" style="margin-left:10px;">Ver Avaliações</a>
+
+    <!-- Botão de logout -->
+    <a href="/logout" class="btn btn-red" style="margin-left:10px;">Sair</a>
+</body>
+</html>

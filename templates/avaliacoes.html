@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Avaliações</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        form { margin-bottom: 20px; }
+        input[type="text"] { padding: 6px; width: 250px; }
+        button { padding: 6px 12px; }
+    </style>
+</head>
+<body>
+    <h2>Avaliações</h2>
+
+    <!-- Formulário de busca -->
+    <form method="POST">
+        <input type="text" name="termo" placeholder="Buscar produto" value="{{ termo }}">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Tabela de avaliações -->
+    <table>
+        <tr>
+            <th>Produto</th>
+            <th>Nota</th>
+            <th>Comentário</th>
+            <th>Usuário</th>
+        </tr>
+        {% for produto, nota, comentario, nome in avaliacoes %}
+        <tr>
+            <td>{{ produto }}</td>
+            <td>{{ nota }}</td>
+            <td>{{ comentario }}</td>
+            <td>{{ nome }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/painel">Voltar ao Painel</a>
+</body>
+</html>
